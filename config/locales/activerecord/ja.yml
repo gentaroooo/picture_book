@@ -3,6 +3,8 @@ ja:
     models:
       user: 'ユーザー'
       board: '掲示板'
+      body: '本文'
+      board_image: "サムネイル"
     attributes:
       user:
         email: 'メールアドレス'
@@ -13,3 +15,4 @@ ja:
       board:
         title: 'タイトル'
         body: '本文'
+        board_image: 'サムネイル'
