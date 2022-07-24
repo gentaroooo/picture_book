@@ -3,6 +3,7 @@ ja:
     models:
       user: 'ユーザー'
       board: '掲示板'
+      comment: 'コメント'
       body: '本文'
       board_image: "サムネイル"
     attributes:
@@ -16,3 +17,5 @@ ja:
         title: 'タイトル'
         body: '本文'
         board_image: 'サムネイル'
+      comment:
+        body: 'コメント'
