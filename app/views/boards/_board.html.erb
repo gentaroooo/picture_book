@@ -7,7 +7,7 @@
           <%= link_to board.title, board_path(board) %>
         </h4>
         <div class='mr10 float-right'>
-           <%= render 'crud_menus', board: board %>
+           <%= render 'crud_menus', board: board if current_user.own?(board) %>
         </div>
         <ul class="list-inline">
           <li class="list-inline-item">
