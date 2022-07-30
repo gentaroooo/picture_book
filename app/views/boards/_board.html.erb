@@ -6,9 +6,11 @@
         <h4 class="card-title">
           <%= link_to board.title, board_path(board) %>
         </h4>
-        <div class='mr10 float-right'>
-           <%= render 'crud_menus', board: board if current_user.own?(board) %>
-        </div>
+        <% if current_user.own?(board) %>
+          <%= render 'crud_menus', board: board %>
+        <% else %>
+          <%= render 'bookmark_button', board: board  %>
+        <% end %>
         <ul class="list-inline">
           <li class="list-inline-item">
             <%= icon 'far', 'user' %>
