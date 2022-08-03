@@ -22,4 +22,6 @@ test:
 
 production:
   <<: *default
-  database: db/normal_production
+  adapter: postgresql
+  encoding: unicode
+  pool: 5

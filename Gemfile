@@ -6,7 +6,7 @@ ruby '2.6.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -45,6 +45,7 @@ group :development, :test do
   gem 'rubocop-checkstyle_formatter'
   gem 'rspec-rails'
   gem 'rspec_junit_formatter'
+  gem 'sqlite3'
   ## ここまで
 end
 
@@ -61,6 +62,11 @@ end
 group :test do
   gem 'capybara'
   gem 'webdrivers'
+end
+
+# 本番環境用のgemグループを新しく作成しPostgresを指定
+group :production do
+  gem 'pg'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
