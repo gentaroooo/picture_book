@@ -65,7 +65,7 @@ class BoardsController < ApplicationController
   private
 
   def board_params
-    params.require(:board).permit(:title, :body, :board_image, :board_image_cache)
+    params.require(:board).permit(:title, :body, :board_image, :board_image_cache, :published_date, :remote_board_image_url, :info_link)
   end
 
   def find_board
@@ -76,7 +76,7 @@ class BoardsController < ApplicationController
     @volume_info = {}
     @volume_info[:title] = params[:book][:title]
     @volume_info[:authors] = params[:book][:authors]
-    @volume_info[:bookImage] = params[:book][:remote_book_image_url]
+    @volume_info[:bookImage] = params[:book][:remote_board_image_url]
     @volume_info[:infoLink] = params[:book][:info_link]
     @volume_info[:publishedDate] = params[:book][:published_date]
   end
