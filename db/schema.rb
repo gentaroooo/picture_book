@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_05_055838) do
+ActiveRecord::Schema.define(version: 2022_08_05_182800) do
 
   create_table "boards", force: :cascade do |t|
     t.string "title", null: false
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2022_08_05_055838) do
     t.datetime "updated_at", null: false
     t.string "board_image"
     t.string "published_date"
-    t.string "remote_book_image"
     t.text "info_link"
     t.index ["user_id"], name: "index_boards_on_user_id"
   end
