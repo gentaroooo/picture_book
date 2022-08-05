@@ -6,6 +6,7 @@ ja:
     post: '投稿'
     search_word: '検索ワード'
     edit: '編集'
+    search: '検索'
     password_reset: 'パスワードリセット'
     message:
       require_login: 'ログインしてください'

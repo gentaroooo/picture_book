@@ -8,6 +8,7 @@ class BoardsController < ApplicationController
 
   def new
     @board = Board.new
+    @volume_info = params[:volumeInfo]
   end
 
   def create
@@ -47,6 +48,20 @@ class BoardsController < ApplicationController
     @bookmark_boards = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
   end
 
+  def search 
+    if params[:search].nil?
+      return
+    elsif params[:search].blank?
+      flash.now[:danger] = '検索キーワードが入力されていません'
+      return
+    else
+      url = "https://www.googleapis.com/books/v1/volumes"
+      text = params[:search]
+      res = Faraday.get(url, q: text, langRestrict: 'ja', maxResults: 30)
+      @google_books = JSON.parse(res.body)
+    end
+  end
+
   private
 
   def board_params
@@ -56,4 +71,14 @@ class BoardsController < ApplicationController
   def find_board
     @board = current_user.boards.find(params[:id])
   end
+
+  def set_volume_info
+    @volume_info = {}
+    @volume_info[:title] = params[:book][:title]
+    @volume_info[:authors] = params[:book][:authors]
+    @volume_info[:bookImage] = params[:book][:remote_book_image_url]
+    @volume_info[:infoLink] = params[:book][:info_link]
+    @volume_info[:publishedDate] = params[:book][:published_date]
+  end
 end
+
