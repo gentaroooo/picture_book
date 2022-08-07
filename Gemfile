@@ -80,6 +80,7 @@ gem 'rails-i18n', '5.1.3'
 gem 'draper', '3.1.0'
 
 gem 'carrierwave', '2.0.2'
+gem 'cloudinary'
 
 gem 'kaminari', '1.1.1'
 
