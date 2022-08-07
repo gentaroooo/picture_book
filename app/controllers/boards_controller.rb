@@ -16,6 +16,7 @@ class BoardsController < ApplicationController
     if @board.save
       redirect_to boards_path, success: t('defaults.message.created', item: Board.model_name.human)
     else
+      set_volume_info
       flash.now['danger'] = t('defaults.message.not_created', item: Board.model_name.human)
       render :new
     end
@@ -74,11 +75,11 @@ class BoardsController < ApplicationController
 
   def set_volume_info
     @volume_info = {}
-    @volume_info[:title] = params[:book][:title]
-    @volume_info[:authors] = params[:book][:authors]
-    @volume_info[:bookImage] = params[:book][:remote_board_image_url]
-    @volume_info[:infoLink] = params[:book][:info_link]
-    @volume_info[:publishedDate] = params[:book][:published_date]
+    @volume_info[:title] = params[:board][:title]
+    @volume_info[:authors] = params[:board][:authors]
+    @volume_info[:bookImage] = params[:board][:remote_board_image_url]
+    @volume_info[:infoLink] = params[:board][:info_link]
+    @volume_info[:publishedDate] = params[:board][:published_date]
   end
 end
 

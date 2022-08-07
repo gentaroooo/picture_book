@@ -21,9 +21,10 @@
     <div class="row">
       <% @google_books['items']&.each do |google_book| %>
         <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="card mb-3", style="height: 220px; min-width: 300px;">
+          <div class="card mb-3", style="height: 370px; min-width: 300px;">
             <div class="row g-0">
               <div class="col-5">
+                <%= link_to 'レビューする', new_board_path(volumeInfo: set_google_book_params(google_book)) %>
                 <%= image_tag google_book_thumbnail(google_book), class: 'img-fluid ms-2 mt-2 border book-img' %>
               </div>
               <div class="col-7">
@@ -34,7 +35,6 @@
                 </div>
               </div>
             </div>
-            <%= link_to '登録', new_board_path(volumeInfo: set_google_book_params(google_book)), class: 'card-link' %>
           </div>
         </div>
       <% end %>
