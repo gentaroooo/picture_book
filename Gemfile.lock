@@ -384,6 +384,7 @@ DEPENDENCIES
   enum_help (= 0.0.17)
   factory_bot_rails
   faker
+  faraday
   font-awesome-sass (~> 5.12.0)
   jbuilder (~> 2.5)
   jquery-rails

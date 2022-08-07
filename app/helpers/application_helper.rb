@@ -1,6 +1,6 @@
 module ApplicationHelper
   def page_title(page_title = '')
-    base_title = 'RUNTEQ BOARD APP'
+    base_title = 'PICTURE BOOK APP'
 
     page_title.empty? ? base_title : page_title + ' | ' + base_title
   end
