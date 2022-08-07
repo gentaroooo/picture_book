@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_05_182800) do
+ActiveRecord::Schema.define(version: 2022_08_07_032611) do
+
+  create_table "authors", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "board_authors", force: :cascade do |t|
+    t.integer "board_id", null: false
+    t.integer "author_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_board_authors_on_author_id"
+    t.index ["board_id", "author_id"], name: "index_board_authors_on_board_id_and_author_id", unique: true
+    t.index ["board_id"], name: "index_board_authors_on_board_id"
+  end
 
   create_table "boards", force: :cascade do |t|
     t.string "title", null: false

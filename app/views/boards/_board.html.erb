@@ -6,6 +6,7 @@
         <h4 class="card-title">
           <%= link_to board.title, board_path(board) %>
         </h4>
+        <p class="card-text mb-2"><%= board.authors.pluck(:name).join(', ')&.truncate(20) %></p>
         <% if current_user.own?(board) %>
           <%= render 'crud_menus', board: board %>
         <% else %>

@@ -30,9 +30,9 @@
         <%= f.hidden_field :published_date, value: @volume_info[:publishedDate] %>
         <%= f.hidden_field :info_link, value: @volume_info[:infoLink] %>
         <%= f.hidden_field :remote_board_image_url, value: @volume_info[:bookImage] %>
-        <%# @volume_info[:authors]&.each do |author| %>
-          <%#= hidden_field_tag 'book[authors][]', author %>
-        <%# end %>
+        <% @volume_info[:authors]&.each do |author| %>
+          <%= hidden_field_tag 'board[authors][]', author %>
+        <% end %>
         <%#= f.submit class: "btn btn-secondary", id: 'submit-button', disabled: true %>
         
         

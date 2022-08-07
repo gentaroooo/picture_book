@@ -13,7 +13,7 @@ class BoardsController < ApplicationController
 
   def create
     @board = current_user.boards.build(board_params)
-    if @board.save
+    if @board.save_with_author(authors_params[:authors])
       redirect_to boards_path, success: t('defaults.message.created', item: Board.model_name.human)
     else
       set_volume_info
@@ -80,6 +80,10 @@ class BoardsController < ApplicationController
     @volume_info[:bookImage] = params[:board][:remote_board_image_url]
     @volume_info[:infoLink] = params[:board][:info_link]
     @volume_info[:publishedDate] = params[:board][:published_date]
+  end
+
+  def authors_params
+    params.require(:board).permit(authors: [])
   end
 end
 
