@@ -1,11 +1,19 @@
 <% content_for(:title, t('.title')) %>
 <div class="container pt-3">
-   <div class="row">
+
+      <% if logged_in? %>
+    <div class="row">
      <div class="col-lg-10 offset-lg-1">
        <!-- 検索フォーム -->
       <%= render 'search_form', url: boards_path %>
      </div>
    </div>
+      <% else %>
+      <%= render 'before_login' %>
+      <% end %>
+
+<p>
+
  
    <!-- 掲示板一覧 -->
    <div class="row">
@@ -21,4 +29,4 @@
       <%= paginate @boards %>
      </div>
    </div>
- </div>
+</div>

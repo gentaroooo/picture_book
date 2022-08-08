@@ -1,5 +1,6 @@
 class BoardsController < ApplicationController
   before_action :find_board, only: [:edit, :update, :destroy]
+  skip_before_action :require_login, only: %i[index]
 
   def index
     @q = Board.ransack(params[:q])

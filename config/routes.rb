@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'password_resets/update'
   get 'bookmarks/create'
   get 'bookmarks/destroy'
-  root 'static_pages#top'
+  root 'boards#index'
   post 'guest_login', to: 'user_sessions#guest_login'
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
