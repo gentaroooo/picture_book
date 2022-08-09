@@ -15,7 +15,12 @@
             <div class='col-md-9'>
               <%= render 'crud_menus', board: @board if current_user.own?(@board) %>
               <h5 class="mt-3 border-bottom pb-1">レビューアー</h5>
-              <p class="card-j"><%= @board.user.decorate.full_name %></p>
+              <div>
+                <%= link_to profile_path(@board.user), class: 'd-md-inline-flex align-items-center hover-decoration' do %>
+                    <%= image_tag @board.user.avatar.url, class: 'rounded-circle ms-3 ms-md-1 me-3 mb-2', size: '50x50' %>
+                    <p class="fs-5 pt-2"><%= @board.user.decorate.full_name %></p>
+                <% end %>
+              </div>
               <h5 class="mt-3 border-bottom pb-1">レビュー内容</h5>
               <p class="card-j"><%= simple_format @board.body %></p>
               <p class="card-tejxt mb-2"><small class="text-muted"><%= l @board.created_at, format: :long %></small></p>

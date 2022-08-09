@@ -33,11 +33,7 @@
         <% @volume_info[:authors]&.each do |author| %>
           <%= hidden_field_tag 'board[authors][]', author %>
         <% end %>
-        <%#= f.submit class: "btn btn-secondary", id: 'submit-button', disabled: true %>
-        
-        
         <%= f.submit class: 'btn btn-primary' %>
       <% end %>
-
   </div>
 </div>
