@@ -9,14 +9,12 @@
 </div> 
 
 <!-- 掲示板一覧 -->
-<div class="col-12">
-  <div class="row">
-    <% if @boards.present? %>
-      <%= render @boards %>
-    <% else %>
-      <p><%= t('.no_result') %></p>
-    <% end %>
-    <!-- ページネーション -->
-    <%= paginate @boards %>
-  </div>
+<div class="col-sm-12">
+  <% if @boards.present? %>
+    <%= render @boards %>
+  <% else %>
+    <p><%= t('.no_result') %></p>
+  <% end %>
+  <!-- ページネーション -->
+  <%= paginate @boards %>
 </div>

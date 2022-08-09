@@ -1,34 +1,4 @@
-/*****************************************
-  ページ全体
-******************************************/
-html, body{
-  height: 100%;
-}
 
-body{
-  background-color: #fafafa;
-}
-
-.fs-7{
-  font-size: 14px;
-}
-
-.dropdown-toggle::after {
-  display:none;
-}
-
-/*****************************************
-  ヘッダー
-******************************************/
-
-
-header .dropdown:hover > .dropdown-menu{
-  display: block;
-}
-
-header .dropdown:hover > .dropdown-menu{
-  right: 0;
-}
 
 /*****************************************
   サイドバー
