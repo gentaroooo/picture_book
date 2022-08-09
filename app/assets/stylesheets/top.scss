@@ -26,10 +26,11 @@
 }
 
 .top-image {
-  position: relative;
+  // position: relative;
   background-position: center;
   width: auto;
   height: 450px;
+  padding: 10px 20px; 
 }
 
 .top-picture {
@@ -39,4 +40,10 @@
 
 .top-picture2 {
   text-align: center;
+  color: rgb(14, 32, 202);
+}
+
+.top-picture3 {
+  text-align: center;
+  color: rgb(233, 189, 10);
 }

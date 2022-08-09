@@ -2,13 +2,8 @@
 <div class="container pt-5">
   <div class="row mb-3">
     <div class="col-lg-8 offset-lg-2">
-
       <h2 class="d-inline"><%= @board.title %></h2>
-
-      
       <p><%= "#{@board.authors.pluck(:name).join(', ')} (著)" unless @board.authors.pluck(:name).blank? %></p>
-
-
       <p><small class="text-muted"><%= "発売日: #{@board.published_date}" unless @board.published_date.blank? %></small></p>
       <!-- 掲示板内容 -->
       <article class="card">
@@ -18,12 +13,11 @@
               <%= image_tag @board.board_image.url, class: 'card-img-top img-fluid', size: '300x200' %>
             </div>
             <div class='col-md-9'>
-                    <% if current_user.own?(@board) %>
-        <p><%= render 'crud_menus', board: @board %></p>
-      <% else %>
-       <p><%= render 'bookmark_button', board: @board %></p>
-      <% end %>
-
+            <% if current_user.own?(@board) %>
+              <p><%= render 'crud_menus', board: @board %></p>
+            <% else %>
+              <p><%= render 'bookmark_button', board: @board %></p>
+            <% end %>
               <h5 class="mt-3 border-bottom pb-1">レビューアー</h5>
               <div>
                 <%= link_to profile_path(@board.user), class: 'd-md-inline-flex align-items-center hover-decoration' do %>
@@ -34,11 +28,6 @@
               <h5 class="mt-3 border-bottom pb-1">レビュー内容</h5>
               <p class="card-j"><%= simple_format @board.body %></p>
               <p class="card-tejxt mb-2"><small class="text-muted"><%= l @board.created_at, format: :long %></small></p>
-            
-
-            
-            
-            
             </div>
           </div>
         </div>
