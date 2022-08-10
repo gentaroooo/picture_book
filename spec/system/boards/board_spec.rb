@@ -37,7 +37,7 @@ RSpec.describe '掲示板', type: :system do
             login_as_general
             visit boards_path
             expect(page).to have_content(board.title), '掲示板一覧画面に掲示板のタイトルが表示されていません'
-            expect(page).to have_content(board.user.decorate.full_name), '掲示板一覧画面に投稿者のフルネームが表示されていません'
+            expect(page).to have_content(board.user.name), '掲示板一覧画面に投稿者のフルネームが表示されていません'
             expect(page).to have_content(board.body), '掲示板一覧画面に掲示板の本文が表示されていません'
           end
         end
@@ -100,7 +100,7 @@ RSpec.describe '掲示板', type: :system do
             click_on board.title
           end
           expect(page).to have_content board.title
-          expect(page).to have_content board.user.decorate.full_name
+          expect(page).to have_content board.user.name
           expect(page).to have_content board.body
         end
       end  

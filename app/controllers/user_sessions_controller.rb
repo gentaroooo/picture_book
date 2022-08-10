@@ -21,15 +21,14 @@ class UserSessionsController < ApplicationController
   def guest_login
     rondom_value = SecureRandom.alphanumeric(10) + Time.zone.now.to_i.to_s
     @guest_user = User.create(
-      first_name: 'User',
-      last_name: 'Guest',
+      name: 'GuestUser',
       email: rondom_value + '@example.com',
       password: 'password',
       password_confirmation: 'password',
       role: :guest
     )
     id = @guest_user.id
-    @guest_user.update!(first_name: "User_#{id}")
+    @guest_user.update!(name: "GuestUser_#{id}")
     auto_login(@guest_user)
     redirect_back_or_to profile_path, success: 'ゲストとしてログインしました'
   end

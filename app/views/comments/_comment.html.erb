@@ -3,7 +3,7 @@
     <%= image_tag comment.user.avatar_url, class: 'rounded-circle', size: '50x50' %>
   </td>
   <td>
-    <h3 class="small"><%= comment.user.decorate.full_name %></h3>
+    <h3 class="small"><%= comment.user.name %></h3>
     <div id="js-comment-<%= comment.id %>">
       <%= simple_format(comment.body) %>
     </div>
