@@ -13,7 +13,7 @@
       <% end %>
         <tr>
           <th scope="row"><%= t(User.human_attribute_name(:full_name)) %></th>
-          <td><%= current_user.decorate.full_name %></td>
+          <td><%= current_user.name %></td>
         </tr>
         <tr>
           <th scope="row"><%= t(User.human_attribute_name(:avatar)) %></th>

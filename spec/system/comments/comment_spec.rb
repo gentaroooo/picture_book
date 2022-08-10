@@ -17,7 +17,7 @@ RSpec.describe 'コメント', type: :system do
         visit board_path board
         within('#js-table-comment') do
           expect(page).to have_content(comment_by_me.body)
-          expect(page).to have_content(comment_by_me.user.decorate.full_name)
+          expect(page).to have_content(comment_by_me.user.name)
         end
       end
     end
@@ -30,7 +30,7 @@ RSpec.describe 'コメント', type: :system do
         click_on '投稿'
         comment = Comment.last
         within("#comment-#{comment.id}") do
-          expect(page).to have_content(me.decorate.full_name)
+          expect(page).to have_content(me.name)
           expect(page).to have_content('新規コメント')
         end
       end

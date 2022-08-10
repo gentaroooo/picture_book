@@ -15,7 +15,7 @@
   <div class="d-flex border-top pt-2">
     <div><%= image_tag board.user.avatar.url, class: 'rounded-circle mt-1 ms-2 me-3', size: '40x40' %></div>
     <div>
-      <p class="fs-7 mb-1"><%= board.user.decorate.full_name %></p>
+      <p class="fs-7 mb-1"><%= board.user.name %></p>
       <p class="card-text mb-2">
         <small class="text-muted"><%= board.created_at %></small>
       </p>
