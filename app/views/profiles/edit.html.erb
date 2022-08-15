@@ -5,11 +5,11 @@
       <h1><%= t('.title') %></h1>
       <%= form_with model: @user, url: profile_path, local: true do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control mb-3' %>
-
-        <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-control mb-3' %>
+        
+        <% if current_user.role != 'guest' %>
+          <%= f.label :email %>
+          <%= f.email_field :email, class: 'form-control mb-3' %>
+        <% end %>
 
         <%= f.label :name %>
         <%= f.text_field :name, class: 'form-control mb-3' %>
