@@ -11,6 +11,7 @@
           <div class='row'>
             <div class='col-md-3'>
               <%= image_tag @board.board_image.url, class: 'card-img-top img-fluid', size: '300x200' %>
+              <p class="m-3"><%= link_to '詳細を見る', @board.info_link, target: '_blank' %></p>
             </div>
             <div class='col-md-9'>
             <% if current_user.own?(@board) %>
